@@ -56,7 +56,7 @@ print(u"Hallo Jörg!")
 
 - Für Programmieranfänger erst einmal leicht zu lernen
 - *Batteries included*, das heißt, (fast) alles wichtige bringt Python in seinen Standard-Bibliotheken mit
-- Leichte Lesbarkeit: Python ist *ausführbarer Pseudecode*
+- Leichte Lesbarkeit: Python ist *ausführbarer Pseudocode*
 - Einige Bibliotheken (wie numpy, scipy, scikit-learn, pandas) haben Python zu einem *defacto*-Standard-Werkzeug für wissenschaftliches Rechnen und *Data Science* gemacht
 
 ---
@@ -193,7 +193,7 @@ import this
 
 - **TigerJython** ist eine plattformübergreifende freie Entwicklungs- und Lernumgebung für Python
 - TigerJython ist in Jython geschrieben, daher Python 2.7
-- TigerJython implementiert die Turtle-Graphik und enthält interessante Module zu Spieleprogrammierung und zu Robotik
+- TigerJython implementiert die Turtle-Graphik und enthält interessante Module zur Spieleprogrammierung und zur Robotik
 
 ![TigerJython Logo](images/tigerjython.png)
 
@@ -226,11 +226,10 @@ import this
 
 # Was ich heute kurz vorstellen möchte
 
-- (C)Python 3 (und gelegentlich 2.7)
+- (C)Python 3 (mit den Unterschieden zu 2.7)
 - IPython und Jupyter (Python 3)
 - Processing.py (Jython)
 - NodeBox 1 (Python 2.7, Mac only)
-- (evtl.) PyGame (Python 2.7)
 
 ---
 
@@ -243,6 +242,21 @@ import this
 **Python 3 mit Jupyter**
 
 ![Jupyter](images/jupyter01.png)
+
+---
+
+## JupyterLab
+
+- Obwohl browserbasiert ist JupyterLab eher eine IDE (stark von RStudio beeinflußt) mit Texteditor, Filebrowser, diversen Ausgabefenstern, Interpreter etc.
+- Man hat gar nicht mehr den Eindruck, im Browser zu editieren (editieren zu müssen).
+
+---
+
+## JupyterLab (2)
+
+![Screenshot JupyterLab](images/jupyterlab.png)
+
+Das könnte was werden!
 
 ---
 
@@ -384,7 +398,7 @@ Auch *pandas* setzt auf *numpy* auf.
 # VPython
 
 - **VPython** ist eine Python-Entwicklungsumgebung für 3D-Simulationen
-- VPython besteht aus einem Python-Interpreter und einem 3D-Graphik-Modula namens *Visual*
+- VPython besteht aus einem Python-Interpreter und einem 3D-Graphik-Modul namens *Visual*
 - Visual ist in C++ geschrieben
 - VPython ist *cross platform* und Open-Source
 - Es gibt VPython für Python 2.7 und Python 3 (?)
