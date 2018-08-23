@@ -15,3 +15,5 @@ arr = np.array(me.getdata(), np.uint8).reshape(me.size[1], me.size[0], 3)
 plt.imshow(arr)
 plt.colorbar()
 plt.show()
+
+print("I did it, Babe!")
