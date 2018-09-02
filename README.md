@@ -6,10 +6,10 @@ Slides und Quellcode für meine Python-Schulung am MPIWG im August/September 201
 
 Die wichtigste Quelle ist die offizielle Python-Dokumentation:
 
-- [Python 3.6-Dokumentation (englisch)](https://docs.python.org/3.6/) -- das ist die Python-Version, die in der Schulung Anwendung findet.
+- [Python 3.6-Dokumentation (englisch)](https://docs.python.org/3.6/) – das ist die Python-Version, die in der Schulung Anwendung findet.
 - Mutige können auch in das ganz frische [Python 3.7](https://docs.python.org/3.7/) hineinschauen.
 - Und wer gezwungen ist, mit Python 2.7 zu arbeiten, [findet hier die Dokumentation](https://docs.python.org/2.7/).
-- Ein wenig versteckt is die Dokumentation zum im Kurs verwendeten `turtle`-Frameworks, für Python 3.6 [findet Ihr sie hier](https://docs.python.org/3.6/library/turtle.html).
+- Ein wenig versteckt ist die Dokumentation zum im Kurs verwendeten `turtle`-Frameworks, für Python 3.6 [findet Ihr sie hier](https://docs.python.org/3.6/library/turtle.html).
 
 ## Tutorials und Lehrbücher
 
