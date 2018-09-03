@@ -8,5 +8,21 @@ wn.title("Ein Super-Duper Turtle-Programm")
 
 alex = t.Turtle()
 alex.shape("turtle")
-# Hier kommt jetzt Euer Programm-Code hin
+
+berta = t.Turtle()
+
+def quadrat(t):
+    for i in range(4):
+        t.forward(100)
+        t.left(90)
+        
+alex.pensize(2)
+alex.pencolor("red")
+quadrat(alex)
+
+berta.pensize(2)
+berta.pencolor("white")
+berta.goto(-100, 0)
+quadrat(berta)
+
 wn.mainloop()
