@@ -10,6 +10,7 @@ alex = t.Turtle()
 alex.shape("turtle")
 
 berta = t.Turtle()
+berta.shape("circle")
 
 def quadrat(t):
     for i in range(4):
@@ -24,5 +25,6 @@ berta.pensize(2)
 berta.pencolor("white")
 berta.goto(-100, 0)
 quadrat(berta)
+
 
 wn.mainloop()

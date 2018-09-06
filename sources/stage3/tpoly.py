@@ -23,6 +23,6 @@ alex.penup()
 alex.goto(-32, -47)  # Polygon im Fenster »einmitten«
 alex.pendown()
     
-polygon(alex, 7, 70)
+polygon(alex, 5, 70)
 
 wn.mainloop()
