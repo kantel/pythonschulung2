@@ -274,9 +274,9 @@ for i in range(len(fruits) - 1, -1, -1):
 print(fruits)
  ~~~~
 
- ---
+---
  
- ### Listen und Strings
+### Listen und Strings
  
 Ein String ist eine Sequenz von Zeichen und eine Liste eine Sequenz von Werten. Aber eine Liste mit Zeichen ist etwas anderes als ein String:
 
@@ -325,6 +325,25 @@ Sollen die Elemente ohne Leerzeichen zusammengesetzt werden, kann der Leerstring
 
 ---
 
+#### Übung 2: Aus Bouncing Ball wird Nouncing Balls
+
+![Bouncing Balls](images/bb2.png)
+
+---
+
+Mithilfe einer Liste `balls[]` zehn Bälle über den Bildschirm hüpfen lassen.
+
+Damit die Bälle jeweils eine andere Startrichtung haben, braucht Ihr Zufallszahlen:
+
+~~~python
+import random as r
+
+angle = r.randint(90, 270)
+~~~~
+
+Ansonsten kann das Programm mit nur wenigen Änderungen aus der ersten Übung erweitert werden – das ist die Power von Listen!
+
+---
 ##### Ein Programm mit Schildkröten und Listen zum Abschluß:
 
 ~~~python
