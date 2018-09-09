@@ -77,7 +77,6 @@ Indizes für Listen funktionieren genauso wie für Strings:
 Der `in`-Operator funktioniert auch mit Listen:
 ~~~python
 print("Edamer" in kaesesorten)
-True
 False
 ~~~~
 
@@ -325,7 +324,7 @@ Sollen die Elemente ohne Leerzeichen zusammengesetzt werden, kann der Leerstring
 
 ---
 
-#### Übung 2: Aus Bouncing Ball wird Nouncing Balls
+#### Übung 2: Aus Bouncing Ball wird Bouncing Balls
 
 ![Bouncing Balls](images/bb2.png)
 
