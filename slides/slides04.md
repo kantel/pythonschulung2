@@ -2,7 +2,7 @@
 <!-- page_number: true -->
 
 
-# Python Schulung (3)
+# Python Schulung (4)
 
 ![](images/python-verwirrt.png)
 
@@ -12,7 +12,7 @@
 
 ---
 
-# Bouncing Ball: Eine Billardkugel zur Einstimmung
+## Übung 1: Bouncing Ball – eine Billardkugel fliegt über den Bildschirm
 
 ---
 
@@ -43,7 +43,7 @@ Diese rote Kugel soll dann über den Bildschirm hüpfen:
 
 ---
 
-# Listen
+# Jetzt aber: Listen!
 
 - Nach Strings sind **Listen** die wichtigste Datenstruktur in Python (meine ich zumindest)
 - Genau wie Strings ist eine Liste eine Folge von Werten. In einem String sind die Werte Zeichen, in einer Liste können die Werte beliebig sein und auch andere Listen enthalten:
@@ -369,9 +369,9 @@ def walk(d):
 
 ~~~python
 def exitWorld():
-    global keepGoing
+    global keep_going
     print("I did it, Babe!")
-    keepGoing = False
+    keep_going = False
 
 # Auf Tastaturereignisse lauschen
 t.listen()
@@ -407,8 +407,8 @@ for i in range(5):
 ---
 
 ~~~python
-keepGoing = True
-while keepGoing:
+keep_going = True
+while keep_going:
     wn.update()
     for i in range(len(ants1)):
         a, b = walk(6)
