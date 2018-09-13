@@ -9,5 +9,6 @@ for i in range(len(fruits2)):
 fruits2.pop(a)
 print(fruits2)
 
-del(fruits2[fruits2.index("🍏")])
+# del(fruits2[fruits2.index("🍏")])
+fruits2.remove("🍏")
 print(fruits2)
