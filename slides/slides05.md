@@ -551,8 +551,58 @@ except:
 
 im.show()
 ```
+
+---
+
+## Datenbanken
+
+Ich persönliche halte nicht viel von Datenbanken, da sie die Daten in irgendein obskures Binär-Format verschwinden lassen. Aber manches Mal kommt man um sie doch nicht herum. Momentan findet zudem gerade ein Paradigmenwechsel statt vom bisherigen (Quai-) Standard SQL hin zu sogenannten NoSQL-Datenbanken
+
+---
+
+### SQL-Datenbanken
+
+Neben dem kommerziellen Boliden **Oracle** spielen drei freie Datenbanken die wichtigste Rolle:
+
+- MySQL: fast alle Web-Anwendungen haben MySQL als Backend
+- PostgreSQL: wird in der Hauptsache bei geospatialen Anwendungen genutzt
+- SQLite: Diese Datenbank benötigt keinen zusätzlichen Server sondern ist in die Anwendung einkompiliert. Auch Python bringt SQLite per Default mit
+
+---
+
+#### Three Tier Architektur
+
+![Three Tier Architektur](images/3-Tier.jpg)
+
+---
+
+#### Three Tier Architektur (2)
+
+Bei SQL-Datenbanken nutzt Python das Dreischichten-Modell. Es gibt eine Zwischenschicht (einen Adapter), der die Schnittstelle zur Datenbank ist.
+
+Wird dann während der Entwicklungsphase mit SQLite gearbeitet, muß man für die Produktionsphase mit MySQL oder PostgreSQL nur den Adapater austauschen.
+
+---
+
+### NoSQL-Datenbanken
+
+Es gibt viele neue Datenbankarchitekturen, die nicht mehr auf SQL basieren. Das sind einmal die *dokumentenorientierten Datenbanken*. Die Platzhirsche hier sind:
+
+- **MongoDB**
+- **CouchDB**
+- **Couchbase**
+
+Dokumentenorientierte Datenbanken eigenen sich in der Regel gut für schwach strukturierte Daten
+
+---
+
+Dann gibt es noch Datenbanken in Form von *Hash-Tables* wie zum Beispiel **Redis** und Datenbanken, die auf Graphen basieren (**GraphQL**).
+
+Hash-Tables sind sehr, sehr schnell, die Vorteile von graphenbasierten Datenbanken habe ich noch nicht erschlossen (ich habe mich damit aber auch noch nciht beschäftigt).
+
+Für alle diese Datenbanken gibt es natürlich Module in Python. Aber es scheint sich hier noch kein Standardmodul herauskristallisiert zu haben.
+
 ---
 
 # Fragen?
 
----
