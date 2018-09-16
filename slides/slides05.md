@@ -30,11 +30,11 @@
 
 Ein leeres Dictionary wird mit
 
-
-    de2nl = dict()
-    print(de2nl)
-    {}
-
+```python
+de2nl = dict()
+print(de2nl)
+{}
+```
 Huuh, da sind sie, die gefährlichen, geschweiften Klammern. 😱
 
 Sie begrenzen ein Dictionary.
@@ -43,25 +43,31 @@ Sie begrenzen ein Dictionary.
 
 Man kann dem bisher leeren Dictionary nun Elemente hinzufügen:
 
-    de2nl["eins"] = "een"
-    print(de2nl)
-    {'eins': 'een'}
+```python
+de2nl["eins"] = "een"
+print(de2nl)
+{'eins': 'een'}
+```
 
 Das weist dem Schlüssel `"eins"` den Wert `"een"` zu. Schlüssel und Wert werden durtch einen Doppelpunkt voneinander getrennt.
 
-    de2nl["zwei"] = "twee"
-    print(de2nl)
-    {'zwei': 'twee', 'eins': 'een'}
+```python
+de2nl["zwei"] = "twee"
+print(de2nl)
+{'zwei': 'twee', 'eins': 'een'}
+```
 
 ---
 
 Dieses Ausgabeformat `schluessel1 : wert1, schluessel2 : wert2, …` ist gleichzeitig auch ein Eingabeformat. Man kann daher auch Dictionary auch so erzeugen:
 
-    de2nl = {"eins" : "een", "zwei" : "twee", "drei" : "drie", 
-    "vier" : "vier", "fünf" : "vijf", "sechs" : "zes"}
-    print(de2nl)
-    {'drei': 'drie', 'sechs': 'zes', 'fünf': 'vijf',
-    'vier': 'vier', 'eins': 'een', 'zwei': 'twee'}
+```python
+de2nl = {"eins" : "een", "zwei" : "twee", "drei" : "drie", 
+         "vier" : "vier", "fünf" : "vijf", "sechs" : "zes"}
+print(de2nl)
+{'drei': 'drie', 'sechs': 'zes', 'fünf': 'vijf',
+ 'vier': 'vier', 'eins': 'een', 'zwei': 'twee'}
+```
 
 Die **Reihenfolge** der Elemente in einem Dictionary ist **nicht vorhersehbar** (und auch nicht durch den Programmierer zu beeinflussen.
 
@@ -69,15 +75,19 @@ Die **Reihenfolge** der Elemente in einem Dictionary ist **nicht vorhersehbar** 
 
 #### Die `for`-Schleife für Dictionaries:
 
-    for key in de2nl:
-        print(key, de2nl[key])
+```python
+for key in de2nl:
+    print(key, de2nl[key])
+```
 
 Auch hier gilt: Die Reihenfolge der Ergebnisse ist nicht vorhersehbar!
 
 #### Der `len`-Operator
 
-    print(len(de2nl))
-    6
+```python
+print(len(de2nl))
+6
+```
 
 Der `len`-Operator liefert bei Dictionaries die Anzahl der Schlüssel-/Wert-Paare
 
@@ -87,8 +97,10 @@ Der `len`-Operator liefert bei Dictionaries die Anzahl der Schlüssel-/Wert-Paar
 
 Der `in`-Operator funktioniert ebenfalls mit Dictionaries:
 
-    "eins" in de2nl
-    True
+```python
+"eins" in de2nl
+True
+```
 
 Er teilt mit, ob etwas als *Schlüssel* (nicht als *Wert*) im Dictionary enthalten ist.
 
@@ -98,11 +110,13 @@ Er teilt mit, ob etwas als *Schlüssel* (nicht als *Wert*) im Dictionary enthalt
 
 Um festzustellen, ob ein **Wert** in einem Dictionary vorhanden ist, kann man diese Methode nutzen:
 
-    ziffern = de2nl.values()
-    print("zes" in ziffern)
-    True
-    print("negen" in ziffern)
-    False
+```python
+ziffern = de2nl.values()
+print("zes" in ziffern)
+True
+print("negen" in ziffern)
+False
+```
 
 `dict.values()` liefert alle Werte eines Dictionaries als Liste zurück. Danach kann mit allen bekannten Listenmethoden auf diesem Ergebnis operiert werden.
 
@@ -114,25 +128,29 @@ Um festzustellen, ob ein **Wert** in einem Dictionary vorhanden ist, kann man di
 - `newdict = dict.copy()` erstellt eine Kopie eines Dictionaries
 - `t = dict.items()` gibt eine Lieste von Tupel-Paaren der Form `(schluessel, wert)` zurück, die alle Elemente des Dictionaries enthält:
 
-
-    t = de2nl.items()
-    print(t)
-    dict_items([('zwei', 'twee'), ('vier', 'vier'), …])
-
+```python
+t = de2nl.items()
+print(t)
+dict_items([('zwei', 'twee'), ('vier', 'vier'), …])
+```
 
 ---
 
 - `s = dict.keys()` gibt eine Liste aller Schlüssel des Dictionaries zurück:
 
-
-    s = de2nl.keys()
-    print(s)
-    dict_keys(['fünf', 'sechs', 'vier', 'drei', 'zwei', 'eins'])
+```python
+s = de2nl.keys()
+print(s)
+dict_keys(['fünf', 'sechs', 'vier', 'drei', 'zwei',
+            'eins'])
+```
 
 Die beiden letzten Methoden geben einen *Iterator* zurück, daher klappt folgendes:
 
-    for key in de2nl.keys():
-    print(key)
+```python
+for key in de2nl.keys():
+print(key)
+````
 
 Da auch hier die Reihenfolge nicht vorhersehbar ist, kann man aber nicht via Listen-Index darauf zugreifen.
 
@@ -151,8 +169,6 @@ Intern werden Dictionaries als Hash-Tabellen gespeichert, dabei wird jedem Schl�
 
 - Das macht Dictionaries zu einer geeigneten Datenstruktur, um zum Beispiel `JSON`-Dateien in eine für Python geeignete Form aufzubereiten.
 
-Beispiel [OpenWeatherMap](http://py.kantel-chaos-team.de/weather/) in Processing.py.
-
 ---
 
 ### Tupel
@@ -166,68 +182,88 @@ Beispiel [OpenWeatherMap](http://py.kantel-chaos-team.de/weather/) in Processing
 
 Syntaktisch ist ein Tupel ein kommaseparierte Liste von Werten:
 
-    t = "a", "b", "c"
-    print(t)
-    ('a', 'b', 'c')
-
+```python
+t = "a", "b", "c"
+print(t)
+('a', 'b', 'c')
+```
 Es ist nicht zwingend notwendig, aber üblicherweise werden Tupel in Klammern geschrieben:
 
-    t = ("a", "b", "c")
-    print(t)
-    ('a', 'b', 'c')
+```python
+t = ("a", "b", "c")
+print(t)
+('a', 'b', 'c')
+```
 
 ---
 
 Um ein Tupel mit einem einzigen Element zu erstellen, wird ein abscgließendes Komma benötigt:
 
-    t1 = "a",
-    print(type(t1))
-    <class 'tuple'>
+```python
+t1 = "a",
+print(type(t1))
+<class 'tuple'>
+```
 
 Es reicht nicht, den Wert nur in Klammern zu setzen:
 
-    t2 = ("a")
-    print(type(t2))
-    <class 'str'>
+```python
+t2 = ("a")
+print(type(t2))
+<class 'str'>
+```
 
 ---
 
 Sondern auch hier ist das abschließende Komma notwendig:
 
-    t3 = ("a", )
-    print(type(t3))
-    <class 'tuple'>
+```python
+t3 = ("a", )
+print(type(t3))
+<class 'tuple'>
+```
 
 Weiterhin gibt es natürlich die Möglichkeit, mit der Funktion `tuple()` ein Tupel zu erstellen. Ohne Argumente erstellt sie ein leeres Tupel:
 
-    t4 = tuple()
-    print(t4)
-    ()
+```python
+t4 = tuple()
+print(t4)
+()
+```
 
 ---
 
 Wird dagegen als Argument eine Sequenz übergeben (String, Liste oder Tupel), erstellt `tuple()` ein Tupel mit allen Elementen dieser Sequenz:
 
-    motto = tuple("don't panic")
-    print(motto)
-    ('d', 'o', 'n', "'", 't', ' ', 'p', 'a', 'n', 'i', 'c')
+```python
+motto = tuple("don't panic")
+print(motto)
+('d', 'o', 'n', "'", 't', ' ', 'p', 'a', 'n', 'i', 'c')
+```
 
 Die meisten Listen-Operatoren funktionieren auch mit Tupeln:
 
-    print(motto[0])
-    print(motto[6:]
+```python
+print(motto[0])
+print(motto[6:]
+```
+
 ---
 
 Wer allerdings versucht, ein Tupel zu verändern, erhält einen Fehler:
 
-    motto[0] = "W"
-    TypeError: "'tuple' object does not support item assignment"
+```python
+motto[0] = "W"
+TypeError: "'tuple' object does not support item assignment"
+```
 
 Man kann zwar ein Tupel nicht verändern, aber wie bei Strings ein Tupel durch ein anderes ersetzen:
 
-    motto2 = ("W", ) + motto[1:]
-    print(motto2)
-    ('W', 'o', 'n', "'", 't', ' ', 'p', 'a', 'n', 'i', 'c')
+```python
+motto2 = ("W", ) + motto[1:]
+print(motto2)
+('W', 'o', 'n', "'", 't', ' ', 'p', 'a', 'n', 'i', 'c')
+```
 
 ---
 
@@ -235,17 +271,19 @@ Man kann zwar ein Tupel nicht verändern, aber wie bei Strings ein Tupel durch e
 
 Wenn man die Werte zweier Variablen vertauschen will, benötigt man normalerweise eine *temporäre* Variable:
 
-    temp = a
-    a = b
-    b = temp
-    
-In Python kann das eleganter mit der Tupel-Zuweisung erledigt werden:
-
-    a, b = b, a
+```python
+temp = a
+a = b
+b = temp
+```
 
 ---
 
-    a, b = b, a
+In Python kann das eleganter mit der Tupel-Zuweisung erledigt werden:
+
+```python
+a, b = b, a
+```
 
 
 - Dabei ist die linke Seite ein Tuepl von Variabeln und die rechte Seite ein Tupel von Ausrücken.
@@ -259,12 +297,14 @@ In Python kann das eleganter mit der Tupel-Zuweisung erledigt werden:
 
 Die rechte Seite der Zuweisung kann eine beliebige Sequenz sein (String, Liste oder Tupel). So kann man zum Beispiel einfach eine Email-Adresse in den Benutzernamen und die Domain aufteilen:
 
-    adr = "joerg@kantel.de"
-    uname, domain = adr.split("@")
-    print(uname)
-    joerg
-    print(domain)
-    kantel.de
+```python
+adr = "joerg@kantel.de"
+uname, domain = adr.split("@")
+print(uname)
+joerg
+print(domain)
+kantel.de
+```
 
 ---
 
@@ -272,11 +312,13 @@ Die rechte Seite der Zuweisung kann eine beliebige Sequenz sein (String, Liste o
 
 `zip()` ist eine integrierte Funktion, die zwei oder mehr Sequenzen nach dem Reißverschlußverfahren in eine Liste (Python 2) oder einen Iterator (Python&nbsp;3) zusammenfaßt:
 
-    s = "monty"
-    l = [0, 1, 2, 3, 4, 5]
-    t = zip(s, l)
-    print(list(t))
-    [('m', 0), ('o', 1), ('n', 2), ('t', 3), ('y', 4)]
+```python
+s = "monty"
+l = [0, 1, 2, 3, 4, 5]
+t = zip(s, l)
+print(list(t))
+[('m', 0), ('o', 1), ('n', 2), ('t', 3), ('y', 4)]
+```
 
 Ich habe lange an die Nützlichkeit von `zip()` gezweifelt, aber glaubt mir, manchmal braucht man es einfach.
 
@@ -294,7 +336,9 @@ Ich habe lange an die Nützlichkeit von `zip()` gezweifelt, aber glaubt mir, man
 
 Um eine Datei zu lesen, benötigt man erst einen *File Descriptor*, den bekommt man mit dem Befehl `open()`
 
-    fd = open("kant.txt")
+```python
+fd = open("kant.txt")
+```
 
 Man beachte, daß Python die Datei auch finden kann! Das ist nicht immer so einfach, wie es scheint: Python erwartet die Datei im *current working directory*, also im aktuellen Arbeitsverzeichnis. Das ist normalerweise das Verzeichnis, in dem das Programm gestartet wird, IDEs und auch TextMate biegen dieses Verzeichnis oft um (Wurzelverzeichnis des Projekts).
 
@@ -302,24 +346,50 @@ Man beachte, daß Python die Datei auch finden kann! Das ist nicht immer so einf
 
 Um sicherzugehen gibt man entweder den vollständigen Pfad zum Verzeichnis an, oder man läßt sich das *current working directory* von Python anzeigen:
 
-    import os
-    print(os.getcwd())
+```python
+import os
+print(os.getcwd())
+```
 
 Dann kann man sich mit `os.join()` den Pfad sicher zusammensstellen:
 
-    path = os.path.join(os.getcwd(), "sources/kant.txt")
+```python
+path = os.path.join(os.getcwd(), "sources/kant.txt")
+```
+
 ---
 
 Und dann die Datei sicher öffnen:
 
-    fd = open(path)
+```python
+fd = open(path)
+```
+
+---
+Alternativ kann man aber auch das Arbeitsverzeichnis explizit setzen. Das erspart einem das Herumgehample in TextMate mit dem `os.getcwd()` und 'os.path.join()'
+
+```python
+import os
+file_path = os.path.dirname(os.path.abspath(__file__))
+os.chdir(file_path)
+```
+
+Dann ist das Öffnen der Datei noch einfacher:
+
+```python
+fd = open("kant.txt")
+```
+
+
+---
 
 Wenn man die Datei geöffnet hat, kann man ihren Inhalt in eine Variable schreiben und dann den Inhalt dieser Variable manipulieren:
 
-    content = fd.read()
-    print(content)
+```python
+content = fd.read()
+print(content)
+```
 
-Vieles davon kann man sich aber ersparen, wenn man statt Apfel-R (Run File) Shift-Apfel-R (Run File in Terminal) nutzt.
 
 ---
 
@@ -327,23 +397,29 @@ Vieles davon kann man sich aber ersparen, wenn man statt Apfel-R (Run File) Shif
 
 Um in eine Text-Datei zu schreiben, gibt es zwei verschiedene Modi:
 
-    fout = open("file1.txt", "w")
-    content = fout.write("Alles neu mächt der Mai!")
+```python
+fout = open("file1.txt", "w")
+content = fout.write("Alles neu mächt der Mai!")
+```
 
 Wenn man mit dem Schreiben fertig ist, sollte man die Datei schließen:
 
-    fout.close()
-    
+```python
+fout.close()
+```
+
 Hier ist die Datei im `write`-Mode und wird bei jedem Schreibvorgang neu erstellt, das heißt der alte Inhalt wird überschrieben.
 
 ---
 
 Daneben gibt es den `append`-Mode, hier wird der neue Inhalt an den alten angehängt:
 
-    fapp = open("file2.txt", "a")
-    content = fapp.write("Alles neu mächt der Mai!")
-    fapp.close()
-    
+```python
+fapp = open("file2.txt", "a")
+content = fapp.write("Alles neu mächt der Mai!")
+fapp.close()
+```
+
 Natürlich sollte man auch hier nicht vergessen, das Datei-Handle am (Programm-) Ende zu schließen.
 
 ----
@@ -360,7 +436,7 @@ try:
     fin.close()
 except:
     print("Es ist etwas faul im Staate Dänemark!")
-````
+```
 
 Die Syntax ist ähnlich der einer `if`-Anweisung.
 
@@ -427,7 +503,7 @@ import urllib2
 
 weatherUrl = "http://api.openweathermap.org/data/…"
 weatherData = json.load(urllib2.urlopen(weatherUrl))
-````
+```
 
 JSON-Daten werden beim Laden in Dicitionaries umformatiert. Daher gibt es keine Garantie auf die Reihenfolge der Daten, die Ihr gegebebenfalls in der Dokumenation zur API findet!
 
@@ -475,4 +551,8 @@ except:
 
 im.show()
 ```
+---
 
+# Fragen?
+
+---
