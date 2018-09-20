@@ -19,7 +19,7 @@ def exitGame():
 t.listen()
 t.onkey(exitGame, "Escape") # Escape beendet das Spiel
 
-balls= []
+balls = []
 speed = 8
 
 for i in range(10):
