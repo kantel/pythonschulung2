@@ -352,7 +352,7 @@ Und das `self` hat sich auch verschoben.
 
 ---
 
-Ich habe in all den Jahren nicht herausgefunden, welche dieser beiden `super()`-Aufrufe nun die kanonische ist, bevorzuge daher – weil ich sie für klarer und aussagekräftiger halte – den direkten Aufruf:
+Ich habe in all den Jahren nicht herausgefunden, welche dieser beiden `super()`-Aufrufe nun der kanonische ist, bevorzuge daher – weil ich ihn für klarer und aussagekräftiger halte – den direkten Aufruf:
 
 ```python
         Sprite.__init__(self, tshape, tcolor)
@@ -362,7 +362,8 @@ Ich habe in all den Jahren nicht herausgefunden, welche dieser beiden `super()`-
 
 - Außerdem muß die oberste Klasse in der Hierarchie bei Python&nbsp;2.7 von `object` erben.
 - Bei den Standardklassen wie `Turtle` ist das gegeben.
-- Erben die Kindklassen aber von Eltern ganz oben in der Hierarchie, die der Programmierer selber geschrieben hat, muß er auch darauf achten.
+- Aber natürlich kann daher keine 2.7-Klasse von einer 3.x-Klasse erben.
+- Erben die Kindklassen  von Eltern ganz oben in der Hierarchie, die der Programmierer selber geschrieben hat, muß er bei Python 2.7 auch für den Aufruf von `object` sorgen.
 
 ---
 
@@ -390,7 +391,7 @@ class Invader(Sprite):
 ---
 
 
-Den kompletten Quellcode und die Assets für **Space Invaders** findet Ihr in meinem GitHub-Repo unter <https://github.com/kantel/pythonschulung2/tree/master/sources/spaceinvaders>. 
+<small>Den kompletten Quellcode und die Assets für **Space Invaders** findet Ihr in meinem GitHub-Repo unter <https://github.com/kantel/pythonschulung2/tree/master/sources/spaceinvaders>.</small>
 
 ![Space Invaders](images/spaceinvaders.jpg)
 
