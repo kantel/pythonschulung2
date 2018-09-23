@@ -387,6 +387,16 @@ class Invader(Sprite):
         self.setx(self.x)
 
 ``` 
+---
+
+
+Den kompletten Quellcode und die Assets für **Space Invaders** findet Ihr in meinem GitHub-Repo unter <https://github.com/kantel/pythonschulung2/tree/master/sources/spaceinvaders>. 
+
+![Space Invaders](images/spaceinvaders.jpg)
+
+---
+
+# Fragen?
 
 
 
