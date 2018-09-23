@@ -399,5 +399,3 @@ class Invader(Sprite):
 
 # Fragen?
 
-
-
