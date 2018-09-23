@@ -234,4 +234,159 @@ object.__floordiv__(self, other)
 
 ## Vererbung
 
-Unter **Vererbung** versteht man die Möglichkeit
+- Unter **Vererbung** versteht man die Möglichkeit, eine Klasse als modifizierte Version einer vorhandenen Klasse zu definieren.
+
+- Die neue Klasse (Unterklasse oder Kindklasse) erbt alle Methoden und Attribute der vorhandenen Klasse (Oberklasse oder Elternklasse).
+
+---
+
+## Beispiel mit der Turtle
+
+In der Spieleprogrammierung benötigt man häufig mindestens zwei Klassen, eine Klasse für die Spielewelt (das Fenster) und eine Klasse für die Spielobjekte, die aus alter Tradition meistens *Sprites* genannt werden. Beide Klassen kann man von der Klasse `Turtle` ableiten:
+
+```python
+import turtle as t
+
+# Weltgröße
+WW = 600
+WH = 600
+```
+
+-->
+
+---
+
+```python
+class GameWorld(t.Turtle):
+    
+    def __init__(self):
+        t.Turtle.__init__(self)
+        self.penup()
+        self.hideturtle()
+        self.speed(0)
+        self.color("white")
+        self.pensize(3)
+        self.keepGoing = True
+    
+    def draw_border(self):
+        self.penup()
+        self.goto(-WW/2, -WH/2)
+        self.pendown()
+        for i in range(4):
+            self.forward(WW)
+            self.left(90)
+
+    def exit_game(self):
+        self.keepGoing = False
+```
+
+---
+
+```python
+class Sprite(t.Turtle):
+    
+    def __init__(self, tshape, tcolor):
+        t.Turtle.__init__(self)
+        self.penup()
+        self.speed(0)
+        self.shape(tshape)
+        self.color(tcolor)
+        self.speed = 1
+```
+
+Die Klasse `Sprite` wiederum kann als Elternklasse für weitere Spielobjekte, wie zum Beispiel den Spieler (den `Actor`) oder den Gegner (`Invader`) funktionieren:
+
+---
+
+```python
+class Actor(Sprite):
+    
+    def __init__(self, tshape, tcolor):
+        Sprite.__init__(self, tshape, tcolor)
+        self.speed = 10
+        self.x = 0
+        self.y = -280
+        self.setheading(90)
+        self.goto(self.x, self.y)
+        
+    def go_left(self):
+        self.x -= self.speed
+        if self.x <= -WW/2 + 20:
+            self.x = -WW/2 + 20
+        self.setx(self.x)
+
+    def go_right(self):
+        self.x += self.speed
+        if self.x >= WW/2 - 20:
+            self.x = WW/2 - 20
+        self.setx(self.x)
+
+```
+---
+
+## Aufruf der Elternklasse
+
+Jede Kindklasse muß natürlich den Konstruktor der Elternklasse aufrufen, damit sie weiß, welche Methoden und Attribute sie erbt. Dafür sind in Python (entgegen dem *Zen of Python* zwei konkurrierende Methoden üblich.
+
+Einmal der direkte Aufruf mit dem Namen der Superklasse (wie in den Beispielen), zum Beispiel:
+
+```python
+        Sprite.__init__(self, tshape, tcolor)
+```
+
+---
+
+Oder der anonyme Aufruf mit `super()`:
+
+```python
+        super().__init__(self, tshape, tcolor)
+```
+
+In Python 2.7 muß man dem `super()`-Aufruf auch noch den Namen der eigenen Klasse mitgeben:
+
+```python
+        super(Actor, self).__init__(tshape, tcolor)
+```
+
+Und das `self` hat sich auch verschoben.
+
+---
+
+Ich habe in all den Jahren nicht herausgefunden, welche dieser beiden `super()`-Aufrufe nun die kanonische ist, bevorzuge daher – weil ich sie für klarer und aussagekräftiger halte – den direkten Aufruf:
+
+```python
+        Sprite.__init__(self, tshape, tcolor)
+```
+
+---
+
+- Außerdem muß die oberste Klasse in der Hierarchie bei Python&nbsp;2.7 von `object` erben.
+- Bei den Standardklassen wie `Turtle` ist das gegeben.
+- Erben die Kindklassen aber von Eltern ganz oben in der Hierarchie, die der Programmierer selber geschrieben hat, muß er auch darauf achten.
+
+---
+
+Jetzt noch schnell eine Klasse für den **Gegner**:
+
+```python
+class Invader(Sprite):
+    
+    def __init__(self, tshape, tcolor):
+        Sprite.__init__(self, tshape, tcolor)
+        self.speed = 2
+        self.x = -200
+        self.y = 250
+        self.goto(self.x, self.y)
+    
+    def move(self):
+        self.x += self.speed
+        if self.x >= WW/2 - 20 or self.x <= -WW/2 + 20:
+            self.y -= 40
+            self.sety(self.y)
+            self.speed *= -1
+        self.setx(self.x)
+
+``` 
+
+
+
