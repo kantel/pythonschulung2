@@ -49,7 +49,7 @@ class Sprite(t.Turtle):
         a = self.xcor() - obj.xcor()
         b = self.ycor() - obj.ycor()
         distance =  math.sqrt((a**2) + (b**2))
-        if distance < 15:
+        if distance <= 15:
             return True
         else:
             return False
